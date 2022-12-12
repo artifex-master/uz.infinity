@@ -1,0 +1,145 @@
+/* Код для подключения шрифта в /css/stylename.css */
+@font-face { 
+  font-family: "MullerBold";
+  src: url("../fonts/MullerBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Код для подключения шрифта в /css/stylename.css */
+@font-face { 
+  font-family: "MullerRegular";
+  src: url("../fonts/MullerRegular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  /** Custom color properties */
+  --iced-theme: #E5E5E5;
+  --sky-blue: #36A9E1;
+  --fogra-0D: #16110D;
+  --fogra-f43: #3B3F43;
+  --white: #fff;
+  --black: #000;
+
+  /** Custom font-size */
+  --fs-50: 50px;
+  --fs-28: 28px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+
+  /** Custom font-family */
+  --ff-muller-400: 'MullerRegular', sans-serif;
+  --ff-muller-700: 'MullerBold', sans-serif;
+
+  /** Custom font-weight */
+  --fw-400: 400;
+  --fw-700: 700;
+
+  /** Custom line-height */
+  --lh-24: 24px;
+
+
+
+}
+
+
+/***************************************************************************************************************************************************************************************************************************************
+  - # RESET
+***************************************************************************************************************************************************************************************************************************************/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a, img, span, input, button, ion-icon { display: block; }
+
+img { height: auto; }
+
+input, button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input { width: 100%; }
+
+button { cursor: pointer; }
+
+ion-icon { pointer-events: none; }
+
+address { font-style: normal; }
+
+html {
+  font-family: var(--ff-muller-400);
+  font-size: var(--fs-18);
+  line-height: var(--lh-24);
+  font-weight: var(--fw-400);
+  background-color: var(--iced-theme);
+  scroll-behavior: smooth;
+}
+
+
+/***************************************************************************************************************************************************************************************************************************************
+  - # REUSED
+***************************************************************************************************************************************************************************************************************************************/
+.btn-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid var(--sky-blue);
+  border-radius: 33px;
+  background-color: transparent;
+  color: var(--sky-blue);
+}
+
+
+
+/***************************************************************************************************************************************************************************************************************************************
+  - # HEADER
+***************************************************************************************************************************************************************************************************************************************/
+
+
+.desktop-header {
+  width: 1237px;
+  margin: 0 auto;
+  padding: 103px 16px 13px 72px;
+  background-color: var(--white);
+  color: var(--sky-blue);
+  border-radius: 0 0 20px 20px;
+
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop-navbar {
+  display: flex;
+  gap: 34px;
+}
+
+.desktop-header__nav-wrap, .desktop-header__phone, .desktop-header__btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desktop-header__phone-btn-group {
+  display: flex;
+  gap: 37px;
+}
+
+
+
+
