@@ -24,6 +24,7 @@
   --black: #000;
 
   /** Custom font-size */
+  --fs-100: 100px;
   --fs-50: 50px;
   --fs-28: 28px;
   --fs-22: 22px;
@@ -38,6 +39,7 @@
   --fw-700: 700;
 
   /** Custom line-height */
+  --lh-100: 100px;
   --lh-24: 24px;
 
 
@@ -53,6 +55,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body { overflow: hidden; }
 
 li { list-style: none; }
 
@@ -82,17 +86,19 @@ address { font-style: normal; }
 
 html {
   font-family: var(--ff-muller-400);
-  font-size: var(--fs-18);
-  line-height: var(--lh-24);
   font-weight: var(--fw-400);
   background-color: var(--iced-theme);
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 
 /***************************************************************************************************************************************************************************************************************************************
   - # REUSED
 ***************************************************************************************************************************************************************************************************************************************/
+.container { width: 1237px; margin: 0 auto; }
+
+
 .btn-outline {
   display: flex;
   justify-content: center;
@@ -109,7 +115,10 @@ html {
 /***************************************************************************************************************************************************************************************************************************************
   - # HEADER
 ***************************************************************************************************************************************************************************************************************************************/
-
+header { 
+  position: relative;
+  margin-bottom: 105px; 
+}
 
 .desktop-header {
   width: 1237px;
@@ -118,6 +127,8 @@ html {
   background-color: var(--white);
   color: var(--sky-blue);
   border-radius: 0 0 20px 20px;
+  z-index: 10;
+  position: relative;
 
 
   display: flex;
@@ -141,5 +152,151 @@ html {
 }
 
 
+.mobile-header {
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
+.mobile-logo-wrap {
+  background-color: var(--white);
+  border-radius: 0 0 28px 28px;
+  padding: 28px 41px 17px;
+}
+
+.mobile-header__menu-wrap ion-icon {
+  font-size: 42px;
+  color: var(--sky-blue);
+}
+
+.mobile-header__menu-wrap {
+  position: absolute;
+  top: 29px;
+  left: 0;
+}
+
+.mobile-phone-wrap {
+  position: absolute;
+  top: 33px;
+  right: 0;
+}
+
+
+.desktop-hero-bg-line {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.mobile-hero-bg-line {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+}
+
+
+
+/***************************************************************************************************************************************************************************************************************************************
+  - # MAIN
+***************************************************************************************************************************************************************************************************************************************/
+main { position: relative; z-index: 10; }
+
+.desktop-hero__title {
+  width: 60%;
+  font-family: var(--ff-muller-700);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-100);
+  line-height: var(--lh-100);
+  color: var(--sky-blue);
+  margin-bottom: 44px;
+}
+
+.desktop-hero__subtitle {
+  width: 46%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-18);
+  line-height: var(--lh-24);
+  color: var(--fogra-0D);
+  gap: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1360px) {
+  .container { width: 876px; }
+
+  header { margin-bottom: 74px; }
+
+
+  .desktop-header {
+    width: 876px;
+    font-size: 13px;
+    line-height: 17px;
+    padding-left: 30px;
+    padding-top: 73px;
+  } 
+
+  .desktop-navbar {
+    gap: 24px;
+  }
+
+  .desktop-header__phone-btn-group {
+    gap: 27px;
+  }
+
+  .desktop-header-line-img {
+    width: 2094px;
+    height: 1360px;
+  }
+
+  .desktop-hero-bg-line {
+    top: 15px;
+    left: -370px;
+  }
+
+  .desktop-hero__title {
+    width: 60%;
+    font-size: 71px;
+    line-height: 71px;
+    color: var(--sky-blue);
+  }
+
+
+  .desktop-hero__subtitle {
+    width: 46%;
+    font-size: 13px;
+    line-height: 17px;
+    gap: 18px;
+  }
+
+
+}
+
+
+
+@media only screen and (max-width: 992px) {  
+  .desktop-header { display: none; }
+
+  .desktop-hero-bg-line { display: none; }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .mobile-header { display: none; }
+
+  .mobile-hero-bg-line { display: none; }
+}
 
